@@ -1,0 +1,265 @@
+/**
+ * Hero / banner — hiện đại: Ken Burns, gradient overlay, chữ stagger, dots & CTA.
+ * Load sau style.css
+ */
+
+#colorlib-hero {
+  background: #0f172a;
+  height: min(88vh, 640px) !important;
+}
+
+#colorlib-hero .flexslider {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+#colorlib-hero .flexslider .slides {
+  overflow: hidden !important;
+}
+
+#colorlib-hero .flexslider .slides li.hero-slide {
+  background-image: none !important;
+  height: min(88vh, 640px) !important;
+  overflow: hidden;
+}
+
+.hero-slide-bg {
+  position: absolute;
+  inset: -6%;
+  z-index: 0;
+  background-image: var(--hero-img);
+  background-size: cover;
+  background-position: center;
+  transform: scale(1);
+  will-change: transform;
+}
+
+#colorlib-hero .slides > li.flex-active-slide .hero-slide-bg {
+  animation: heroKenBurns 16s ease-in-out infinite alternate;
+}
+
+#colorlib-hero .slides > li:not(.flex-active-slide) .hero-slide-bg {
+  animation: none;
+  transform: scale(1.03);
+}
+
+@keyframes heroKenBurns {
+  from {
+    transform: scale(1.03);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+
+#colorlib-hero .flexslider .slides li .overlay.hero-overlay {
+  background: linear-gradient(
+    118deg,
+    rgba(15, 23, 42, 0.92) 0%,
+    rgba(15, 23, 42, 0.55) 42%,
+    rgba(15, 23, 42, 0.35) 100%
+  );
+  z-index: 1;
+}
+
+#colorlib-hero .flexslider .slides li .container-fluid {
+  position: relative;
+  z-index: 2;
+}
+
+#colorlib-hero .flexslider .slider-text {
+  height: min(88vh, 640px) !important;
+}
+
+#colorlib-hero .slider-text-inner .desc {
+  padding: 1.25rem 1.5rem;
+  border-radius: 1.25rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
+}
+
+#colorlib-hero .slider-text-inner h1,
+#colorlib-hero .slider-text-inner h2 {
+  text-shadow: 0 4px 32px rgba(0, 0, 0, 0.35);
+  letter-spacing: 0.06em;
+}
+
+#colorlib-hero .slider-text-inner .head-1 {
+  font-size: clamp(1.65rem, 4.5vw, 3.25rem);
+  font-weight: 800 !important;
+  line-height: 1.1 !important;
+  color: #fff !important;
+  margin-bottom: 0.15em !important;
+}
+
+#colorlib-hero .slider-text-inner .head-2 {
+  font-size: clamp(1rem, 2.2vw, 1.65rem) !important;
+  letter-spacing: 0.35em !important;
+  opacity: 0.95;
+}
+
+#colorlib-hero .slider-text-inner .head-3 {
+  font-size: clamp(1.35rem, 3.5vw, 2.75rem) !important;
+  font-weight: 600 !important;
+  margin-top: 0.1em !important;
+}
+
+#colorlib-hero .slider-text-inner .category {
+  margin-top: 1rem !important;
+  margin-bottom: 1.5rem !important;
+}
+
+#colorlib-hero .slider-text-inner .category span {
+  display: inline-block;
+  padding: 0.4rem 1.1rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  font-weight: 500 !important;
+  font-size: 0.95rem !important;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.95) !important;
+}
+
+#colorlib-hero .slider-text-inner .btn.btn-primary {
+  border-radius: 999px !important;
+  background: linear-gradient(135deg, #22d3ee 0%, #0ea5e9 50%, #6366f1 100%) !important;
+  font-weight: 700 !important;
+  font-size: 0.8rem !important;
+  letter-spacing: 0.18em !important;
+  padding: 1rem 2rem !important;
+  box-shadow: 0 14px 36px rgba(14, 165, 233, 0.4);
+  transition: transform 0.28s ease, box-shadow 0.28s ease, filter 0.28s ease;
+}
+
+#colorlib-hero .slider-text-inner .btn.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 44px rgba(99, 102, 241, 0.45);
+  filter: brightness(1.05);
+}
+
+/* Stagger caption lines when slide active */
+#colorlib-hero .slides > li:not(.flex-active-slide) .desc > * {
+  animation: none !important;
+  opacity: 0;
+  transform: translateY(22px);
+}
+
+#colorlib-hero .slides > li.flex-active-slide .desc > * {
+  animation: heroCaptionIn 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+#colorlib-hero .slides > li.flex-active-slide .desc .head-1 {
+  animation-delay: 0.08s;
+}
+#colorlib-hero .slides > li.flex-active-slide .desc .head-2 {
+  animation-delay: 0.18s;
+}
+#colorlib-hero .slides > li.flex-active-slide .desc .head-3 {
+  animation-delay: 0.28s;
+}
+#colorlib-hero .slides > li.flex-active-slide .desc .category {
+  animation-delay: 0.4s;
+}
+#colorlib-hero .slides > li.flex-active-slide .desc > p:last-child {
+  animation-delay: 0.52s;
+}
+
+@keyframes heroCaptionIn {
+  from {
+    opacity: 0;
+    transform: translateY(26px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Dots — pill track */
+#colorlib-hero .flexslider .flex-control-nav {
+  bottom: 1.5rem !important;
+  left: 50% !important;
+  right: auto !important;
+  transform: translateX(-50%);
+  width: auto !important;
+  display: flex !important;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 0.85rem;
+  margin: 0 !important;
+  background: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  z-index: 20 !important;
+}
+
+#colorlib-hero .flexslider .flex-control-nav li {
+  margin: 0 !important;
+}
+
+#colorlib-hero .flexslider .flex-control-nav li a {
+  width: 9px !important;
+  height: 9px !important;
+  border-radius: 999px !important;
+  background: rgba(255, 255, 255, 0.35) !important;
+  box-shadow: none !important;
+  transition: width 0.35s ease, background 0.25s ease;
+}
+
+#colorlib-hero .flexslider .flex-control-nav li a.flex-active {
+  width: 26px !important;
+  background: #fff !important;
+  background-color: #fff !important;
+}
+
+@media (max-width: 767.98px) {
+  #colorlib-hero .slider-text-inner .desc {
+    padding: 1rem;
+    margin: 0 0.5rem;
+  }
+
+  #colorlib-hero .slider-text-inner .head-2 {
+    letter-spacing: 0.2em !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #colorlib-hero .slides > li .hero-slide-bg {
+    animation: none !important;
+    transform: none !important;
+  }
+
+  #colorlib-hero .slides > li .desc > * {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  #colorlib-hero .slider-text-inner .btn.btn-primary {
+    transition: none;
+  }
+}
+
+/* Trusted partners — SVG từ jsDelivr (simple-icons), tránh ảnh ngoài chặn hotlink */
+.partner-brand-logo {
+  height: 52px;
+  width: auto;
+  max-width: 140px;
+  object-fit: contain;
+  opacity: 0.72;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.partner-col:hover .partner-brand-logo {
+  opacity: 1;
+  transform: scale(1.04);
+}

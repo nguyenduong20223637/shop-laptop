@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test API Thêm Sản Phẩm</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <h1>Test API Thêm Sản Phẩm</h1>
+    <button onclick="testAPI()">Test Thêm Sản Phẩm</button>
+    <pre id="result"></pre>
+
+    <script>
+        function testAPI() {
+            const payload = {
+                sanpham: {
+                    ten_san_pham: "Test Laptop Dell XPS 15",
+                    hinh_anh: "https://example.com/image.jpg",
+                    mo_ta: "Đây là mô tả test cho laptop",
+                    danh_muc_id: 1,
+                    thuong_hieu_id: 1,
+                    gia: 25000000,
+                    tinh_trang: 1
+                },
+                options: [{
+                    cau_hinh_id: 1,
+                    mau_sac_id: 1,
+                    so_luong: 10,
+                    hinh_anh: "https://example.com/image.jpg",
+                    gia_dieu_chinh: 0
+                }]
+            };
+
+            console.log('Payload:', payload);
+
+            axios.post('http://127.0.0.1:8000/api/admin/product/create', payload)
+                .then(response => {
+                    console.log('Success:', response.data);
+                    document.getElementById('result').textContent = JSON.stringify(response.data, null, 2);
+                })
+                .catch(error => {
+                    console.error('Error:', error.response);
+                    document.getElementById('result').textContent = JSON.stringify(error.response.data, null, 2);
+                });
+        }
+    </script>
+</body>
+</html>

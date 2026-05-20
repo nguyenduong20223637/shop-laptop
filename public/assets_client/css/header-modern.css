@@ -1,0 +1,350 @@
+/**
+ * Header — layout hiện đại, font sans phù hợp tiếng Việt (tránh Rokkitt + letter-spacing gây chồng chữ).
+ */
+
+.site-header.colorlib-nav {
+  position: sticky;
+  top: 0;
+  z-index: 1001;
+  background: #f0f4f8;
+  box-shadow: 0 1px 0 rgba(15, 23, 42, 0.06), 0 8px 24px rgba(15, 23, 42, 0.06);
+}
+
+.site-header .top-menu.site-header-inner {
+  padding: 1rem 0 0 !important;
+}
+
+.site-header .site-header-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 1.5rem;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.site-header .site-header-logo#colorlib-logo {
+  margin: 0 !important;
+  padding: 0 !important;
+  font-size: 1.65rem !important;
+  font-weight: 800 !important;
+  font-family: "Montserrat", "Be Vietnam Pro", system-ui, sans-serif !important;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+.site-header .site-header-logo a {
+  color: #0f172a !important;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0;
+  transition: opacity 0.2s ease;
+}
+
+.site-header .site-header-logo a:hover {
+  opacity: 0.85;
+}
+
+.site-header .site-header-logo-mark {
+  color: #0ea5e9;
+  font-weight: 800;
+}
+
+.site-header .site-header-logo-text {
+  color: #0f172a;
+  font-weight: 700;
+}
+
+.site-header .site-header-search.search-wrap {
+  flex: 1 1 260px;
+  max-width: min(440px, 100%);
+  margin-left: auto;
+}
+
+@media (max-width: 767.98px) {
+  .site-header .site-header-search.search-wrap {
+    flex: 1 1 100%;
+    max-width: none;
+    margin-left: 0;
+    order: 3;
+    width: 100%;
+  }
+
+  .site-header .site-header-logo {
+    order: 1;
+  }
+}
+
+.site-header .site-header-search .search {
+  height: 44px !important;
+  border-radius: 999px !important;
+  border: 1px solid rgba(15, 23, 42, 0.12) !important;
+  padding-left: 1.15rem !important;
+  padding-right: 3.25rem !important;
+  font-family: "Be Vietnam Pro", "Montserrat", sans-serif !important;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.site-header .site-header-search .search:focus {
+  border-color: rgba(14, 165, 233, 0.55) !important;
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.2);
+  outline: none;
+}
+
+.site-header .site-header-search .submit-search {
+  height: 44px !important;
+  width: 44px !important;
+  right: 2px !important;
+  top: 0 !important;
+  border-radius: 50% !important;
+  background: linear-gradient(135deg, #22d3ee, #0ea5e9) !important;
+  border: none !important;
+  box-shadow: 0 4px 14px rgba(14, 165, 233, 0.45);
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.site-header .site-header-search .submit-search:hover {
+  transform: scale(1.05);
+  filter: brightness(1.05);
+}
+
+/* —— Menu —— */
+.site-header .site-header-menu.menu-1 {
+  width: 100%;
+}
+
+.site-header .site-header-menu-list {
+  display: flex !important;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.15rem 0.25rem;
+  margin: 0 !important;
+  padding: 0.65rem 0 1rem !important;
+  list-style: none !important;
+}
+
+.site-header .site-header-menu-list > li {
+  display: inline-flex !important;
+  align-items: center;
+  float: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  font-family: "Be Vietnam Pro", "Montserrat", system-ui, sans-serif !important;
+  font-weight: 500 !important;
+  font-size: 0.8125rem !important;
+  letter-spacing: 0.02em !important;
+  text-transform: none !important;
+}
+
+.site-header .site-header-menu-list > li > a {
+  display: inline-block;
+  padding: 0.5rem 0.85rem !important;
+  border-radius: 999px;
+  color: #334155 !important;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.site-header .site-header-menu-list > li > a:hover {
+  background: rgba(14, 165, 233, 0.1);
+  color: #0f172a !important;
+}
+
+.site-header .site-header-menu-list > li.active > a {
+  color: #0ea5e9 !important;
+  background: rgba(14, 165, 233, 0.12);
+}
+
+.site-header .site-header-menu-list > li.active > a:after {
+  display: none !important;
+}
+
+.site-header .site-header-menu-list > li.cart {
+  margin-left: auto !important;
+}
+
+.site-header .site-header-menu-list > li.cart > a {
+  font-weight: 600 !important;
+  background: rgba(15, 23, 42, 0.06);
+  color: #0f172a !important;
+}
+
+.site-header .site-header-menu-list > li.cart > a:hover {
+  background: rgba(14, 165, 233, 0.15);
+}
+
+/* ── Dropdown base ── */
+.site-header .has-dropdown .dropdown {
+  min-width: 200px !important;
+  width: max-content !important;
+  max-width: min(480px, 94vw) !important;
+  background: #fff !important;
+  border: 1px solid rgba(15,23,42,.08) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 6px rgba(15,23,42,.04), 0 16px 32px rgba(15,23,42,.1) !important;
+  padding: 6px !important;
+  top: calc(100% + 6px) !important;
+  margin-top: 0 !important;
+  left: 0 !important;
+  overflow: hidden !important;
+}
+
+.site-header .has-dropdown::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 6px;
+}
+
+.site-header .has-dropdown .dropdown:before { display: none !important; }
+
+/* ── Item chung ── */
+.site-header .has-dropdown .dropdown li {
+  display: block !important;
+  font-family: "Be Vietnam Pro", sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+  margin: 0 !important;
+}
+
+.site-header .has-dropdown .dropdown li a {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  color: #334155 !important;
+  padding: 8px 10px !important;
+  border-radius: 8px !important;
+  font-weight: 500 !important;
+  font-size: 13px !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+  transition: background .12s, color .12s !important;
+  text-decoration: none !important;
+  line-height: 1.4 !important;
+}
+
+.site-header .has-dropdown .dropdown li a:hover {
+  color: #0ea5e9 !important;
+  background: #f0f9ff !important;
+  transform: none !important;
+}
+
+/* ── Danh mục dropdown ── */
+.site-header .has-dropdown.dd-danhmuc .dropdown { min-width: 200px !important; }
+
+.site-header .has-dropdown.dd-danhmuc .dropdown li a {
+  font-weight: 600 !important;
+}
+
+.site-header .has-dropdown.dd-danhmuc .dropdown li a::before {
+  content: '';
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: #cbd5e1;
+  flex-shrink: 0;
+  transition: background .12s;
+}
+.site-header .has-dropdown.dd-danhmuc .dropdown li a:hover::before {
+  background: #0ea5e9;
+}
+
+/* ── Tài khoản dropdown ── */
+.nav-account-dropdown {
+  min-width: 180px !important;
+  right: 0 !important;
+  left: auto !important;
+}
+
+/* Divider */
+.site-header .has-dropdown .dropdown .dd-divider {
+  height: 1px;
+  background: #f1f5f9;
+  margin: 4px 6px;
+}
+
+.site-header .has-dropdown:hover > a,
+.site-header .has-dropdown:focus-within > a { color: #0ea5e9 !important; }
+
+/* Thanh sale */
+.site-header .sale.site-header-sale {
+  padding: 0.65rem 0 !important;
+  background: linear-gradient(90deg, #0d9488 0%, #0ea5e9 42%, #6366f1 100%) !important;
+  overflow: hidden !important;
+}
+
+/* Ticker — fade + trượt nhẹ */
+.sale-ticker {
+  position: relative;
+  height: 1.4em;
+  overflow: hidden;
+}
+.sale-ticker__item {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: rgba(255,255,255,.95);
+  font-family: "Be Vietnam Pro", "Montserrat", sans-serif;
+  text-decoration: none !important;
+  white-space: nowrap;
+  opacity: 0;
+}
+.sale-ticker__item:nth-child(1) { animation: ticker-a 8s ease-in-out infinite; }
+.sale-ticker__item:nth-child(2) { animation: ticker-a 8s ease-in-out infinite; animation-delay: 4s; }
+
+@keyframes ticker-a {
+  0%   { opacity: 0; transform: translateX(12px); }
+  6%   { opacity: 1; transform: translateX(0);    }
+  44%  { opacity: 1; transform: translateX(0);    }
+  50%  { opacity: 0; transform: translateX(-12px);}
+  100% { opacity: 0; transform: translateX(-12px);}
+}
+
+/* ── Override style.css gốc cho dropdown ── */
+.colorlib-nav ul li.has-dropdown .dropdown li,
+.colorlib-nav ul li.has-dropdown .dropdown li a,
+.nav-account-dropdown li,
+.nav-account-dropdown li a {
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+  font-size: 13px !important;
+  font-family: "Be Vietnam Pro", sans-serif !important;
+  font-weight: 500 !important;
+  line-height: 1.4 !important;
+  margin-bottom: 0 !important;
+}
+
+/* Dropdown tài khoản - controlled by JS */
+.nav-account-wrap { position:relative; flex-shrink:0; }
+.nav-account-dropdown {
+  display:none;
+  position:absolute; top:100%; right:0; left:auto;
+  min-width:160px; background:#fff;
+  border:1px solid rgba(15,23,42,.08); border-radius:10px;
+  box-shadow:0 4px 6px rgba(15,23,42,.04), 0 12px 24px rgba(15,23,42,.1);
+  padding:4px; list-style:none; margin:0; z-index:1002;
+  transform: translateX(0);
+}
+.nav-account-dropdown li a {
+  display:flex; align-items:center; gap:7px;
+  padding:7px 12px; border-radius:7px;
+  font-size:13px; font-weight:600; color:#334155;
+  text-decoration:none; font-family:"Be Vietnam Pro",sans-serif;
+  transition:background .12s, color .12s;
+  text-transform:none !important; letter-spacing:0 !important;
+  white-space:nowrap;
+}
+.nav-account-dropdown li a:hover { background:#f0f9ff; color:#0ea5e9; }

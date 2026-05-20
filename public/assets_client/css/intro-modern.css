@@ -1,0 +1,173 @@
+/**
+ * Khối giới thiệu — dải ngang full-width kiểu thanh banner (roll)
+ */
+
+.colorlib-intro.intro-modern {
+  padding: 0 !important;
+  margin: 0;
+  clear: both;
+  width: 100%;
+  background: linear-gradient(180deg, #e8eef4 0%, #f1f5f9 100%);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.intro-modern .intro-modern__inner {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+/* Thanh nội dung trắng kéo ngang cả khung */
+.intro-modern .intro-modern__strip {
+  width: 100%;
+  margin: 0;
+  padding: 1.65rem clamp(1rem, 4vw, 3.5rem);
+  background: #fff;
+  border-top: 1px solid rgba(15, 23, 42, 0.06);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.07);
+  box-shadow: 0 8px 32px rgba(15, 23, 42, 0.06);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.85rem;
+  box-sizing: border-box;
+}
+
+@media (min-width: 992px) {
+  .intro-modern .intro-modern__strip {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: clamp(1rem, 3vw, 2.5rem);
+    padding: 1.5rem clamp(1.5rem, 5vw, 4.5rem);
+    min-height: 5.5rem;
+  }
+
+  .intro-modern__eyebrow {
+    flex: 1 1 0;
+    min-width: 0;
+    margin: 0 !important;
+    text-align: right;
+    justify-content: flex-end;
+    display: flex;
+    align-items: center;
+  }
+
+  .intro-modern__brand {
+    flex: 0 0 auto;
+    margin: 0 !important;
+  }
+
+  .intro-modern__tagline-wrap {
+    flex: 1 1 0;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .intro-modern__tagline {
+    margin: 0 !important;
+    max-width: none !important;
+    text-align: left;
+  }
+
+  .intro-modern__tagline::after {
+    margin-left: 0 !important;
+    margin-right: auto;
+  }
+}
+
+.intro-modern__eyebrow {
+  margin: 0;
+  font-family: "Inter", "Be Vietnam Pro", system-ui, sans-serif;
+  font-size: clamp(0.75rem, 1.5vw, 0.875rem);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #64748b;
+  line-height: 1.35;
+}
+
+.intro-modern__brand {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", "Be Vietnam Pro", system-ui, sans-serif;
+  font-size: clamp(2.25rem, 5.5vw, 3.5rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  border: none;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.06em;
+}
+
+.intro-modern__brand-mark {
+  color: #0ea5e9;
+  font-weight: 800;
+}
+
+.intro-modern__brand-rest {
+  color: #0f172a;
+  font-weight: 800;
+}
+
+.intro-modern__tagline-wrap {
+  width: 100%;
+  max-width: 36rem;
+}
+
+@media (min-width: 992px) {
+  .intro-modern__tagline-wrap {
+    max-width: none;
+    width: auto;
+  }
+}
+
+.intro-modern__tagline {
+  margin: 0;
+  font-family: "Be Vietnam Pro", "Inter", system-ui, sans-serif;
+  font-size: clamp(1.05rem, 2.4vw, 1.4rem);
+  font-weight: 600;
+  line-height: 1.4;
+  color: #334155;
+  letter-spacing: -0.015em;
+}
+
+.intro-modern__tagline::after {
+  content: "";
+  display: block;
+  width: 72px;
+  height: 4px;
+  margin: 0.85rem auto 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #22d3ee, #0ea5e9, #6366f1);
+}
+
+@media (max-width: 991.98px) {
+  .intro-modern__tagline::after {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .intro-modern .intro-modern__strip {
+    padding: 1.35rem 1rem;
+  }
+
+  .intro-modern__brand {
+    flex-wrap: wrap;
+  }
+}
