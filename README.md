@@ -84,3 +84,10 @@ http://127.0.0.1:8000/admin/login
 ## Thông tin liên hệ
 
 - **Nhóm**: Nguyễn Duy Toại (20223710) & Nguyễn Đình Tùng Dương (20223637)
+
+## Cập nhật
+
+- Thêm chức năng thống kê doanh thu theo ngày/tháng/năm
+- Thêm biểu đồ top sản phẩm xem nhiều và bán chạy
+- Cải thiện giao diện quản lý banner với preview ảnh và sắp xếp thứ tự
+- Fix lỗi tính tổng tiền trong giỏ hàng
