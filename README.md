@@ -1,116 +1,86 @@
-# ShopLapTopProject
+# DTStore - Shop Laptop
 
-ShopLapTop Project is a web application built using the PHP Laravel framework. It allows users to create, edit and delete articles on a sales website.
+DTStore là website bán laptop được xây dựng bằng framework PHP Laravel. Hệ thống hỗ trợ đầy đủ các chức năng mua sắm trực tuyến cho khách hàng và quản trị cho admin.
 
-## Setting
-To install and run `ShopLapTop` Project, you need the following requirements:
+## Yêu cầu cài đặt
 
-- ```PHP >= 7.3```
+- `PHP >= 8.0`
+- `Composer`
+- `MySQL / PHPMyAdmin`
+- `XAMPP hoặc tương đương`
 
-- ```Composer```
+## Hướng dẫn cài đặt
 
-- ```PHPMyAdmin```
-
-Then you can follow these steps:
-
-- Clone project from GitHub:
+Clone project từ GitHub:
 ```
-git clone https://github.com/LeeHien999/Shop-laptop.git
+git clone https://github.com/nguyenduong20223637/shop-laptop.git
 ```
-- Move into project folder:
+
+Di chuyển vào thư mục project:
 ```
-cd Shop-laptop
+cd shop-laptop
 ```
-- Install dependent packages:
+
+Cài đặt các package:
 ```
 composer install
 ```
-- Copy the .env.example file to .env and fill in the necessary information about the database and application
-- Run migrations to create database tables:
+
+Copy file `.env.example` thành `.env` và điền thông tin database:
+```
+DB_DATABASE=shopdientu
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+Chạy migration:
 ```
 php artisan migrate
 ```
-- Run seeders to add data to the database:
-```
-php artisan db:seed
-```
 
-- Run the application server:
+Chạy server:
 ```
 php artisan serve
 ```
-- Open the browser and access the address:
+
+Truy cập:
 ```
 http://127.0.0.1:8000/
 ```
-## Instructions for using the email sending function
-- To use the function of sending activation email or password to the registered account, you need to have a Gmail account and enable 2-layer security mode to get the key. You can follow the instructions here.
-- After having a Gmail account, you need to edit mail-related information in the .env file as follows:
+
+Trang admin:
 ```
-MAIL_MAILER=smtp
-MAIL_HOST=smtp.gmail.com
-MAIL_PORT=587
-MAIL_USERNAME="yourmail@gmail.com"
-MAIL_PASSWORD=yourkey
-MAIL_ENCRYPTION=tls
-MAIL_FROM_ADDRESS="yourmail@gmail.com"
-MAIL_FROM_NAME="${APP_NAME}"
+http://127.0.0.1:8000/admin/login
 ```
-- You replace `yourmail@gmail.com` and `yourkey` with your email and key.
-- You restart the virtual server with the `php artisan serve` command
-- You can now use the email sending function when registering, forgetting your password, or changing passwords for accounts.
 
-## Use
-Project has the following features:
-- Register and login with email authentication;
-### ADMIN
-- CRUD products.
-- CRUD category.
-- CRUD brand.
-- CRUD configuration.
-- CRUD color.
-- CRUD account, permissions, decentralization, admin account.
-- statistics
-### ClIENT
-- CRUD Orders, cart.
-- Payment orders.
-- view product details.
-- comment
+## Chức năng chính
 
-## Demo
-- You can preview the web demo at the link below
-- https://demoshoplaptop.dzloye.com/
-- https://demoshoplaptop.dzloye.com/admin/login
-- some demo images
-  ![Home 1](img-demo/home_1.png)
+### Client
+- Đăng ký, đăng nhập tài khoản
+- Xem danh sách và chi tiết sản phẩm laptop
+- Lọc sản phẩm theo danh mục, thương hiệu, giá
+- Thêm vào giỏ hàng, đặt hàng
+- Thanh toán COD hoặc VNPay
+- Xem lịch sử đơn hàng
+- Bình luận, đánh giá sản phẩm
 
-  
-  ![Home 2](img-demo/home_2.jpeg)
+### Admin
+- Quản lý sản phẩm (thêm, sửa, xóa, ẩn/hiện)
+- Quản lý danh mục, thương hiệu, màu sắc, cấu hình
+- Quản lý banner trang chủ
+- Quản lý đơn hàng, xử lý trạng thái
+- Quản lý tài khoản khách hàng
+- Phân quyền admin
+- Thống kê doanh thu, top sản phẩm
 
+## Công nghệ sử dụng
 
-  ![product 1](img-demo/product_1.jpeg)
+- **Backend**: Laravel 10, PHP 8.2
+- **Frontend**: Bootstrap 5, Vue.js 2, Axios
+- **Database**: MySQL
+- **Thanh toán**: VNPay Sandbox
+- **Icons**: Font Awesome 6
 
-  
-  ![product 2](img-demo/product_2.jpeg)
+## Thông tin liên hệ
 
-
-  ![product 3](img-demo/product_3.jpeg)
-
-
-  ![admin 1](img-demo/admin_1.jpeg)
-
-  
-  ![admin 2](img-demo/admin_2.jpeg)
-
-  
-## License
-Some key points of the license are:
-
-- You have the right to use, copy, modify and distribute the project for any purpose
-- You are not responsible for any damages caused by using the project
-Contact Info\
-If you have any questions or suggestions about Laravel Project, you can contact me via:
-
-- Email: hienlemanh2002@gmail.com
-- Facebook: [https://www.facebook.com/profile.php?id=100013412708743]
-## Thank you for your interest in ShopLaptop Project! 😊
+- **Nhóm**: Nguyễn Duy Toại (20223710) & Nguyễn Đình Tùng Dương (20223637)
