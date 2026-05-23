@@ -56,26 +56,30 @@ class APIAdminController extends Controller
     {
         DB::beginTransaction();
         try {
-            $admin   = Admin::find($request->id);
-            if($admin) {
-                $data   = $request->all();
+            $admin = Admin::find($request->id);
+            if ($admin) {
+                $data = $request->all();
+                if (!empty($data['password'])) {
+                    $data['password'] = bcrypt($data['password']);
+                } else {
+                    unset($data['password']);
+                }
                 $admin->update($data);
                 DB::commit();
                 return response()->json([
-                    'status'    => 1,
-                    'message'   => 'Đã xóa tài khoản thành công!'
+                    'status'  => 1,
+                    'message' => 'Cập nhật tài khoản thành công!'
                 ]);
             } else {
                 return response()->json([
-                    'status'    => 0,
-                    'message'   => 'tài khoản không tồn tại!'
+                    'status'  => 0,
+                    'message' => 'Tài khoản không tồn tại!'
                 ]);
             }
-        } catch(Exception $e) {
+        } catch (Exception $e) {
             Log::error($e);
             DB::rollBack();
         }
-
     }
 
     public function data()

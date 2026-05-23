@@ -91,3 +91,9 @@ http://127.0.0.1:8000/admin/login
 - Thêm biểu đồ top sản phẩm xem nhiều và bán chạy
 - Cải thiện giao diện quản lý banner với preview ảnh và sắp xếp thứ tự
 - Fix lỗi tính tổng tiền trong giỏ hàng
+
+## Ngày 23/05/2026
+
+- Fix lỗi biểu đồ thống kê top sản phẩm
+- Cải thiện giao diện trang thống kê doanh thu với nút chọn nhanh
+- Fix hash mật khẩu khi cập nhật tài khoản admin

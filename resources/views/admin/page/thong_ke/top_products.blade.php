@@ -16,6 +16,9 @@
 .btn-quick:hover,.btn-quick.active{background:#0ea5e9;color:#fff;border-color:#0ea5e9}
 .quick-group{display:flex;gap:6px;flex-wrap:wrap;padding:12px 24px;border-bottom:1px solid #f1f5f9;background:#fafafa}
 .charts-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.tk-card-body{padding:24px}
+.chart-wrap{position:relative;height:300px}
+.chart-wrap canvas{position:absolute;top:0;left:0;width:100%!important;height:100%!important}
 </style>
 @endsection
 
@@ -56,7 +59,7 @@
                 <h3><i class="fa-solid fa-eye" style="color:#0ea5e9"></i> Top 5 Sản Phẩm Xem Nhiều Nhất</h3>
             </div>
             <div class="tk-card-body">
-                <canvas id="myChart" style="max-height:320px"></canvas>
+                <div class="chart-wrap"><canvas id="myChart"></canvas></div>
             </div>
         </div>
         <div class="tk-card">
@@ -64,7 +67,7 @@
                 <h3><i class="fa-solid fa-fire" style="color:#ef4444"></i> Top 5 Sản Phẩm Bán Chạy Nhất</h3>
             </div>
             <div class="tk-card-body">
-                <canvas id="myChart2" style="max-height:320px"></canvas>
+                <div class="chart-wrap"><canvas id="myChart2"></canvas></div>
             </div>
         </div>
     </div>
@@ -86,7 +89,17 @@ new Vue({
         chart1 = new Chart(document.getElementById('myChart'), {
             type: 'doughnut',
             data: { labels: [], datasets: [{ label: 'Luot xem', data: [], backgroundColor: colors, borderWidth: 2 }] },
-            options: { responsive: true, plugins: { legend: { position: 'bottom' } } }
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'right',
+                        align: 'center',
+                        labels: { boxWidth: 14, padding: 16, font: { size: 12 } }
+                    }
+                }
+            }
         });
         chart2 = new Chart(document.getElementById('myChart2'), {
             type: 'bar',
