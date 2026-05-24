@@ -97,3 +97,10 @@ http://127.0.0.1:8000/admin/login
 - Fix lỗi biểu đồ thống kê top sản phẩm
 - Cải thiện giao diện trang thống kê doanh thu với nút chọn nhanh
 - Fix hash mật khẩu khi cập nhật tài khoản admin
+
+## Ngày 24/05/2026
+
+- Hoàn thiện trang thống kê top sản phẩm với biểu đồ doughnut và bar chart
+- Cập nhật phân quyền admin và hash mật khẩu tự động
+- Fix hiển thị kích hoạt tài khoản khách hàng
+- Cập nhật tài liệu báo cáo
