@@ -28,6 +28,7 @@ composer install
 
 Copy file `.env.example` thành `.env` và điền thông tin database:
 ```
+APP_URL=http://127.0.0.1:8000
 DB_DATABASE=shopdientu
 DB_USERNAME=root
 DB_PASSWORD=
